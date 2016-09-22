@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Prompt from './Prompt'
+import firebase from 'firebase';
 
 class App extends Component {
-
 
   constructor(props) {
     super(props);
@@ -11,16 +11,28 @@ class App extends Component {
       i: 0,
       prompts: []
     };
+
+    const config = {
+      apiKey: "AIzaSyAULx_BUJTfRUiTSXVq0ircdx18lPgo0hE",
+      authDomain: "asknotio.firebaseapp.com",
+      databaseURL: "https://asknotio.firebaseio.com"
+    };
+    let firebaseApp = firebase.initializeApp(config);
+    const org = document.location.hash.substring(1).split(".")[0];
+    this.itemsRef = firebaseApp.database().ref(org);
     this.setIndex = this.setIndex.bind(this);
   };
 
+  listenForItems(itemsRef) {
+    itemsRef.on('value', (snap) => {
+      this.setState({prompts: snap.val()});
+      this.setIndex();
+    });
+  };
+
   componentDidMount() {
-    const hash = document.location.hash.substring(1).split(".");
-    const org = hash[0];
-    const prompts = require('./json/'+ org + '.json');
-    this.setState({prompts:prompts});
-    this.setIndex();
     window.addEventListener('hashchange', this.setIndex);
+    this.listenForItems(this.itemsRef);
   };
 
   setIndex(){
@@ -31,10 +43,9 @@ class App extends Component {
   };
 
   render() {
-
     let data = this.state.prompts[this.state.i];
     if (!data)
-      return (<div>Unable to find prompt</div>);
+      return (<div></div>);
     return (
       <div className="container">
         <div className="row">&nbsp;</div>
