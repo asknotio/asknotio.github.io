@@ -2,6 +2,7 @@
   "name": "asknotio.github.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://asknot.io",
   "devDependencies": {
     "react-scripts": "0.4.3"
   },
