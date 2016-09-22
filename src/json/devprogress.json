@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Join us at DevProgress!",
+    "text": "Hi. It's awesome to hear you're super keen on helping out with DevProgress. We want you!",
+    "actions": [
+      {
+        "title": "title?",
+        "text": "Shall we get started?",
+        "redirect": 1
+      }
+    ]
+  },
+  {
+    "title": "Skills.",
+    "text": "OK Great. So you'd like to join the team and get involved. What sort of think would you like to be doing?",
+    "actions": [
+      {
+        "text": "Writing code",
+        "redirect": 2
+      },
+      {
+        "text": "Designing stuff",
+        "redirect": 2
+      },
+      {
+        "text": "People & Team leadership",
+        "redirect": 2
+      },
+      {
+        "text": "Writing",
+        "redirect": 2
+      },
+      {
+        "text": "Mentoring",
+        "redirect": 2
+      },
+      {
+        "text": "Research",
+        "redirect": 2
+      },
+      {
+        "title": "title?",
+        "text": "Testing",
+        "redirect": 2
+      },
+      {
+        "text": "All of the above",
+        "redirect": 2
+      },
+      {
+        "text": "None of the above",
+        "redirect": 2
+      }
+    ]
+  },
+  {
+    "title": "Thank",
+    "text": "Ok great, I think I know just the thing!",
+    "actions": [
+      {
+        "text": "Join Project XXX",
+        "href": "http://trello.com"
+      }
+    ]
+  },
+  {
+    "title": "Code?",
+    "text": "What sort code your write?",
+    "actions": [
+      {
+        "text": "Front end",
+        "redirect": 2
+      },
+      {
+        "text": "Backend",
+        "redirect": 2
+      },
+      {
+        "text": "Mobile",
+        "redirect": 2
+      },
+      {
+        "text": "Full stack",
+        "redirect": 2
+      },
+      {
+        "text": "Infrastructure",
+        "redirect": 2
+      }
+    ]
+  }
+]
